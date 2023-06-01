@@ -25,7 +25,7 @@ const Register = () => {
         setRegisterFailed(true);
         console.log(`Ошибка: ${err.status}`);
       })
-      .finally(setInfoTooltipOpened(true));
+      .finally(() => setInfoTooltipOpened(true));
   };
 
   const handleEmailChange = evt => {
