@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Header from './Header';
 import api from '../utils/utils';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import MainPage from './MainPage';
@@ -9,7 +8,7 @@ import Login from './Login';
 import ProtectedRoute from './ProtectedRoute';
 
 const App = () => {
-  const [loggedIn, setLoggedIn] = React.useState(false); 
+  const [loggedIn, setLoggedIn] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState({});
 
   React.useEffect(() => {
