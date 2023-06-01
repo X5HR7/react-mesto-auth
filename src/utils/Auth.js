@@ -24,7 +24,30 @@ class Auth {
     });
   }
 
-  login(password, email) {}
+  login(password, email) {
+    return fetch(`${this.baseUrl}/signin`, {
+      method: 'POST',
+      headers: this.headers,
+      body: JSON.stringify({
+        password: password,
+        email: email,
+      }),
+    }).then(res => {
+      return this._getResponseData(res);
+    });
+  }
+
+  checkToken(token) {
+    return fetch(`${this.baseUrl}/users/me`, {
+      method: 'GET',
+      headers: {
+        ...this.headers,
+        Authorization: `Bearer ${token}`,
+      },
+    }).then(res => {
+      return this._getResponseData(res);
+    });
+  }
 }
 
 const auth = new Auth({

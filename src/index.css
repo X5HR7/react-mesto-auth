@@ -47,6 +47,7 @@
 @import url(blocks/header/__text/header__text.css);
 @import url(blocks/header/__account-name/header__account-name.css);
 @import url(blocks/header/__link/header__link.css);
+@import url(blocks/header/__quit-link/header__quit-link.css);
 
 
 /* PROFILE */

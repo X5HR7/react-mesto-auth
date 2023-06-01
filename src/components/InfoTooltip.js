@@ -7,7 +7,7 @@ const InfoTooltip = props => {
       <div className='popup__container'>
         <button className='popup__button-close' type='button' onClick={props.onClose}></button>
         <img src={props.isFailed ? failedIcon : doneIcon} alt={props.name} className='popup__icon' />
-        <h2 className='popup__title popup__title_type_info-tooltip'>{props.isFailed ? 'Что-то пошло не так! Попробуйте ещё раз.' : 'Вы успешно зарегистрировались!'}</h2>
+        <h2 className='popup__title popup__title_type_info-tooltip'>{props.isFailed ? 'Что-то пошло не так! Попробуйте ещё раз.' : props.successText}</h2>
       </div>
     </div>
   );

@@ -42,9 +42,13 @@ const Register = () => {
 
   return (
     <>
-      <InfoTooltip name='infoTooltip' isFailed={isRegisterFailed} isOpen={isInfoTooltipOpened} onClose={handlePopupClose} />
-      <Header accountName='' link='/sign-in' linkText='Войти' />
-      <div className='register'>
+      <InfoTooltip name='infoTooltip' successText='Вы успешно зарегистрировались!' isFailed={isRegisterFailed} isOpen={isInfoTooltipOpened} onClose={handlePopupClose} />
+      <Header>
+        <Link to='/sign-in' className='header__link'>
+          Войти
+        </Link>
+      </Header>
+      <section className='register'>
         <h1 className='register__title'>Регистрация</h1>
         <Form name='register' buttonText='Зарегистрироваться' onSubmit={handleSubmit}>
           <input type='email' onChange={handleEmailChange} value={email} className='form__input' placeholder='Email' required />
@@ -53,7 +57,7 @@ const Register = () => {
         <Link to='/sign-in' className='register__link'>
           Уже зарегистрированы? Войти
         </Link>
-      </div>
+      </section>
     </>
   );
 };

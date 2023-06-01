@@ -10,7 +10,7 @@ import api from '../utils/utils';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import AddPlacePopup from './AddPlacePopup';
 
-const MainPage = () => {
+const MainPage = props => {
   const [currentUser, setCurrentUser] = React.useState({});
   const [isEditProfilePopupOpen, setEditProfileOpened] = React.useState(false);
   const [isAddPlacePopupOpen, setAddPlacePopupOpened] = React.useState(false);
@@ -134,7 +134,10 @@ const MainPage = () => {
 
         <ImagePopup card={selectedCard} onClose={closeAllPopups} />
 
-        <Header />
+        <Header>
+          <p className='header__account-name'>{props.email || ''}</p>
+          <p className='header__quit-link' onClick={props.handleQuit}>Выйти</p>
+        </Header>
 
         <Main
           onEditAvatar={handleEditAvatarClick}
